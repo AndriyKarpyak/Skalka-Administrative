@@ -1,21 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ss.skalkaadministrativemobile" >
+    package="com.ss.skalkaadministrativemobile">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
+        android:name=".SkalkaApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+
+        <!--<receiver-->
+            <!--android:name="com.ss.skalkaadministrativemobile.receiver.NetworkChangeReceiver" >-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.net.conn.CONNECTIVITY_CHANGE" />-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
+
+        <service android:enabled="true" android:name="com.ss.skalkaadministrativemobile.service.GoogleSheetSynchService" />
+        <receiver
+            android:name="com.ss.skalkaadministrativemobile.receiver.BootCompletedReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:label="StartMyServiceAtBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:noHistory="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".InitializeActivity"
+            android:noHistory="true" >
+        </activity>
+        <activity
+            android:name=".MainMenuActivity"
+            android:label="@string/title_activity_main_menu" >
+        </activity>
+        <activity
+            android:name=".CreateOrderActivity"
+            android:label="@string/title_activity_create_order"
+            android:parentActivityName=".MainMenuActivity" >
+        </activity>
+        <activity
+            android:name=".WorkerActivity"
+            android:label="@string/title_activity_worker" >
+        </activity>
+
     </application>
 
 </manifest>

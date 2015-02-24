@@ -1,8 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Skalka Administrative Mobile</string>
+    <string name="app_name">Скалка</string>
+    <string name="action_settings">Настройки</string>
+
+    <!-- activity_main -->
+    <string name="act_main.btn.try_again">Повторити спробу.</string>
+    <string name="act_main.lbl.connecting">Підєднююсь до Google. ...</string>
+    <string name="act_main.lbl.cant_find_files">Не можу знайти потрібні файли на сервері.</string>
+    <string name="act_main.lbl.required_file_found">Успішно підєднався до таблиці [%.15s].</string>
+
+    <!-- act_main_menu -->
+    <string name="title_activity_main_menu">Основні дії.</string>
+    <string name="act_main_menu.btn.add_order">Створити замовлення.</string>
+
+    <!-- activity_create_order -->
+    <string name="title_activity_create_order">Створити замовлення</string>
+    <string name="activity_create_order.lbl.planed_delivery">Доставити</string>
+    <string name="activity_create_order.lbl.order_price">Ціна</string>
+    <string name="activity_create_order.lbl.amount">Кількість</string>
+
+    <!-- synchronization service-->
+    <string name="notification_synchronization_service.title">Скалка Синхронізатор.</string>
+    <string name="notification_synchronization_service.text">Сервіс синхронізації із сервером.</string>
+
+    <!-- auto generated -->
+    <string name="title_activity_worker">WorkerActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="title_activity_initialize">InitializeActivity</string>
 
 </resources>
